@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <title>Register New Employee</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        .main-heading{
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .input-field{
+            width: 600px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-field label{
+            width: 200px;
+            padding: 10px;
+        }
+        .mark{
+            color: red;
+        }
+        .input-field input{
+            width: 300px;
+            padding: 10px;
+            background-color: #f7f7f7;
+             border: none;
+        }
+
+        input[type='submit']{
+            padding: 10px;
+            width: 550px;
+            color: #fff;
+            background-color: #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" class="register">
+        {% csrf_token %}
+        <h1 class="main-heading">Employee Salary Details</h1>
+        <div class="input-field">
+            <label for="email">Employee Email: <span class="mark">*</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-field">
+            <label for="basicSalary">Basic Salary: <span class="mark">*</span></label>
+            <input type="number " id="basicSalary" name="basic_salary" >
+        </div>
+
+        <div class="input-field">
+            <label for="hra">HRA: <span class="mark">*</span></label>
+            <input type="number" id="hra" name="hra" >
+        </div>
+
+        <div class="input-field">
+            <label for="conveyance">Conveyance: <span class="mark">*</span></label>
+            <input type="number" id="conveyance" name="conv" >
+        </div>
+
+        <div class="input-field">
+            <label for="spacialAllowance">Special Allowance: <span class="mark">*</span></label>
+            <input type="number" id="spacialAllowance" name="special_allowance" >
+        </div>
+
+        <!-- <div class="input-field">
+            <label for="medicalAllowance">Medical Allowance: <span class="mark">*</span></label>
+            <input type="text" id="dayslwp" required>
+        </div> -->
+
+        <div class="input-field">
+            <label for="pfNox">PF : <span class="mark">*</span></label>
+            <input type="number" id="pfNox" name="pf" >
+        </div>
+
+        <!-- <div class="input-field">
+            <label for="netPay">Net Pay: <span class="mark">*</span></label>
+            <input type="text" id="netPay" >
+        </div> -->
+        <div class="input-field">
+            <label for="year">Year: <span class="mark">*</span></label>
+            <input type="number" id="year" name="year" required>
+        </div>
+        <div class="input-field">
+            <label for="month">Month: <span class="mark">*</span></label>
+            <input type="text " id="month" name="month" required>
+        </div>
+
+
+        <div class="input-field">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

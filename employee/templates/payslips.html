@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Payslip</title>
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    @page {
+            margin: 2px;
+        }
+
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .main-section{
+        width: 100%;
+        height: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+
+    /* Payslip, Company - top heading */
+    .top-box{
+        height: 150px;
+        padding: 4px;
+        display: flex;
+        align-items: center;
+    }
+
+    .top-logo{
+        margin-left: 5%;
+    }
+
+
+    /* Company Details */
+    .top-details{
+        margin-left: 5%;
+    }
+
+
+    /* Subheading Month Field */
+    #Heading-month{
+        padding-left: 5px;
+    }
+    
+
+    /* All Employee Detail Cards With Border */
+    .details-cards{
+        width: 750px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+
+    /* Payslip Company Heading */
+    .top-details-1{
+        font-size: 25px;
+    }
+    .top-details-2-sub-part{
+        font-size: 12px;
+    }
+
+    /*  */
+    .top-header{
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: #000;
+    }
+
+    .detail-card{
+        width: 375px;
+        background-color: transparent;
+    }
+    
+    .data-feild{
+        min-height: 50px;
+        max-height: 44px;
+    }
+
+    .data-feild-2, .data-feild{
+        width: 100%;
+        display: flex;
+        font-size: 11px;
+    }
+
+    .data-span, .data-span-2{
+        padding: 10px 20px;
+        width: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+
+    
+    .bottom-1, .bottom-2{
+        padding: 10px;
+        font-size: 12px;
+    }
+    #bottom-1-data{
+        color: #003CB0;
+    }
+    
+    .border-required{
+        border: 1px solid black;
+    }
+
+    .new-section-heading{
+        height: 50px;
+        width: 99.6%;
+        color: #003CB0;
+        font-size: 15px;
+        border: 1.1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<body>
+    
+
+    <section class="main-section">
+        <div class="main-div border-required">
+            <div class="top-box">
+                <!-- <div class="top-logo"><img src="" width="130px" alt="SpacePe"></div> -->
+
+                <div class="top-details">
+                    <div class="top-details-1">SpacePe Services India LLP</div>
+                    <div class="top-details-2">
+                        <div class="top-details-2-sub-part">WZ - 206, Street No.15, Sadh Nagar, Palam Colony, New Delhi -110045</div>
+                        <div class="top-details-2-sub-part">GSTIN: 9826738S7GI</div>
+                        <div class="top-details-2-sub-part">Support No. : +91 8924748383</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="main-box">
+                <div class="top-header">PAYSLIP FOR THE MONTH OF <span id="Heading-month" class="Heading-feild"> Nov 2024</span></div>
+
+
+                <div class="details-cards">
+                    <div class="detail-card">
+                        <div class="data-feild"><span class="data-span border-required">Name</span> <span id="name" class="data-span border-required">Shuiab Raza</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Designation</span> <span id="designation" class="data-span border-required"></span></div>
+                        <div class="data-feild"><span class="data-span border-required">Department</span> <span id="department" class="data-span border-required">6012473559</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Employee Id</span> <span id="employee_id" class="data-span border-required">HR</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Joining Date</span> <span id="joining_date" class="data-span border-required">0.00</span></div>
+                        <div class="data-feild"><span class="data-span border-required">PAN</span> <span id="pan_number" class="data-span border-required">0.00</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Location</span> <span id="location" class="data-span border-required">11001627</span></div>
+                        <div class="new-section-heading border-required">Salary Rates (In INR)</div>
+                        
+                        <div class="income-details border-required">
+                            <div class="data-feild-2"><span class="data-span-2">Basic Salary</span> <span id="salary_rates_basic_salary" class="data-span-2">21,000.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">HRA</span> <span id="salary_rates_hra" class="data-span-2 -2">10,500.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Conveyance</span> <span id="salary_rates_basic_conveyance" class="data-span-2">1,600.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Special Allowance</span> <span id="salary_rates_basic_special_allowance" class="data-span-2">5,850.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Medical Allowance</span> <span id="salary_rates_medical_allowance" class="data-span-2">1,250.00</span></div>
+                        </div>
+
+                        <div class="data-feild"><span class="data-span border-required">Total</span> <span id="name" class="data-span border-required">190----</span></div>
+                    </div>
+
+
+
+
+                    <div class="detail-card">
+                        <div class="data-feild"><span class="data-span border-required">PF Number</span> <span id="pf_number" class="data-span border-required"></span></div>
+                        <div class="data-feild"><span class="data-span border-required">Account Number</span> <span id="account_number" class="data-span border-required">101390757900</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Bank Name</span> <span id="bank_name" class="data-span border-required">Kotak Mahindra Bank India</span></div>
+                        <div class="data-feild"><span class="data-span border-required">IFSC</span> <span id="ifsc" class="data-span border-required">0.00</span></div>
+                        <div class="data-feild"><span class="data-span border-required">UAN No</span> <span id="uan_no" class="data-span border-required">0.00</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Arrear Days</span> <span id="arrear_days" class="data-span border-required">0.00</span></div>
+                        <div class="data-feild"><span class="data-span border-required">Days Paid</span> <span id="days_paid" class="data-span border-required">0.00</span></div>
+
+                        <div class="new-section-heading border-required ">Earning Current Month (In INR)</div>
+
+                        <div class="income-details border-required">
+                            <div class="data-feild-2"><span class="data-span-2">Basic Salary</span> <span id="earning_basic_salary" class="data-span-2">21,000.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">HRA</span> <span id="earning_hra" class="data-span-2 -2">10,500.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Conveyance</span> <span id="earning_basic_conveyance" class="data-span-2">1,600.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Special Allowance</span> <span id="earning_basic_special_allowance" class="data-span-2">5,850.00</span></div>
+                            <div class="data-feild-2"><span class="data-span-2">Medical Allowance</span> <span id="earning_medical_allowance" class="data-span-2">1,250.00</span></div>
+                        </div>
+
+                        <div class="data-feild"><span class="data-span border-required">Total</span> <span id="name" class="data-span border-required">80 ----</span></div>
+                    </div>
+
+                </div>
+                <div class="bottom-1 border-required">Net Pay: <span id="bottom-1-data">38,500.00 <span id="bottom-1-word-data"> - Indian Rupees Thirty Eight Thousand and Four Hundred Only</span></span></div>
+                <div class="bottom-2 border-required">***Note : Since this is a computer generated payslip, hence no signature is required</div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>

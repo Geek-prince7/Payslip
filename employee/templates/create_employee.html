@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <title>Register New Employee</title>
+
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-family: sans-serif;
+        }
+        .main-heading{
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+        }
+        .input-field{
+            width: 600px;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-field label{
+            width: 200px;
+            padding: 10px;
+        }
+        .mark{
+            color: red;
+        }
+        .input-field input{
+            width: 300px;
+            padding: 10px;
+            background-color: #f7f7f7;
+            border: none;
+        }
+
+        input[type='submit']{
+            padding: 10px;
+            width: 550px;
+            color: #fff;
+            background-color: #000;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" class="register">
+        {% csrf_token %}
+        <h1 class="main-heading">Employee Registration</h1>
+        <div class="input-field">
+            <label for="name">Employee Name: <span class="mark">*</span></label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input-field">
+            <label for="email">Employee Email: <span class="mark">*</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <!-- <div class="input-field">
+            <label for="emloyeeId">Employee Id: <span class="mark">*</span></label>
+            <input type="text" id="emloyeeId" required>
+        </div> -->
+
+        <div class="input-field">
+            <label for="department">Department: <span class="mark">*</span></label>
+            <select type="text" id="department" name="department" required>
+                {% for dept in depts %}
+                    <option value="{{dept.id}}">{{dept.dept_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label for="designtaion">Designation: <span class="mark">*</span></label>
+            <input type="text" id="designtaion" name="designation" required>
+        </div>
+
+        <div class="input-field">
+            <label for="joiningdate">Joining Date: <span class="mark">*</span></label>
+            <input type="date" id="joiningdate" name="joining_date" required>
+        </div>
+
+        <div class="input-field">
+            <label for="bankName">Bank Name: <span class="mark">*</span> </label>
+            <select type="text" id="bankName" name="bank_name" required>
+                {% for bank in banks %}
+                    <option value="{{bank.id}}">{{bank.bank_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="input-field">
+            <label for="accountNumber">Account Number: <span class="mark">*</span></label>
+            <input type="text" id="accountNumber" name="account_number" required>
+        </div>
+
+        <div class="input-field">
+            <label for="ifsc">IFSC: <span class="mark">*</span></label>
+            <input type="text" id="ifsc" name="ifsc" required>
+        </div>
+
+        
+
+        <div class="input-field">
+            <label for="pfn">PF Number: <span class="mark">*</span></label>
+            <input type="text" id="pfn" name="pf_number" >
+        </div>
+
+        <div class="input-field">
+            <label for="uanNo">UAN Number: <span class="mark">*</span></label>
+            <input type="text" id="uanNo" name="uan_no" >
+        </div>
+
+        <!-- <div class="input-field">
+            <label for="daysLwp">Days LWP: <span class="mark">*</span></label>
+            <input type="text" id="daysLwp"  required>
+        </div> -->
+
+        <div class="input-field">
+            <label for="panNo">PAN Number: <span class="mark">*</span></label>
+            <input type="text" id="panNo" name="pan_no" required>
+        </div>
+
+        <!-- <div class="input-field">
+            <label for="daysPaid">Days Paid: <span class="mark">*</span></label>
+            <input type="text" id="daysPaid" required>
+        </div> -->
+
+        <!-- <div class="input-field">
+            <label for="daysPaid">Days Paid: <span class="mark">*</span></label>
+            <input type="text" id="daysPaid" required>
+        </div> -->
+
+        <div class="input-field">
+            <label for="basicSalary">BASIC SALARY: <span class="mark">*</span></label>
+            <input type="number" id="basicSalary" name="basic_salary" required>
+        </div>
+
+        <div class="input-field">
+            <label for="hra">HRA: <span class="mark">*</span></label>
+            <input type="number" id="hra" name="hra" >
+        </div>
+
+        <div class="input-field">
+            <label for="conv">CONV: <span class="mark">*</span></label>
+            <input type="number" id="conv" name="conv" >
+        </div>
+
+        <div class="input-field">
+            <label for="pf">PF: <span class="mark">*</span></label>
+            <input type="number" id="pf" name="pf" >
+        </div>
+        <div class="input-field">
+            <label for="sa">SPECIAL ALLOWANCE: <span class="mark">*</span></label>
+            <input type="number" id="sa" name="special_allowance" >
+        </div>
+
+        <div class="input-field">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

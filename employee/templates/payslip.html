@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap" rel="stylesheet">
+    <title>Payslip</title>
+</head>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+    @page {
+            size: A4;
+            margin: 30mm 20mm 30mm 20mm;
+        }
+    *{
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* margin-top: 10%; */
+    }
+
+    .Heading-month{
+        padding: 10px;
+    }
+    .details-cards{
+        width: 1050px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+    }
+    .top-details{
+        margin-left: 30px;
+    }
+
+    .top-box{
+        height: 150px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: white;
+    }
+
+    .top-details-1{
+        font-size: 30px;
+    }
+
+    .top-details-2-sub-part{
+        margin: 10px 0px;
+    }
+
+
+    .top-header{
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #D9D9D9;
+        font-weight: bolder;
+    }
+
+    .detail-card{
+        height: 449px;
+        width: 350px;
+        background-color: transparent;
+        border-left: 1px solid black;
+    }
+    
+    .data-feild{
+        
+        /* min-height: 40px; */
+        /* max-height: 35px; */
+        width: 100%;
+        display: flex;
+        font-size: 12px;
+        justify-content: space-between;
+    }
+
+    .data-feild-2{
+        /* height: 50px; */
+        width: 100%;
+        display: flex;
+        font-size: 12px;
+        justify-content: space-between;
+    }
+
+    .data-span{
+        padding: 10px 20px;
+        width: 200px;
+        border: 1px solid black;
+    }
+    .data-span-2{
+        padding: 10px 20px;
+        width: 200px;
+    }
+    .dynamic-data{
+        color: #003CB0;
+    }
+
+    .new-section-heading{
+        height: 50px;
+        width: 100%;
+        color: #003CB0;
+        font-size: 15px;
+        font-weight: bolder;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .bottom-1, .bottom-2{
+        padding: 10px;
+        font-size: 12px;
+        border: 1px solid black;
+        font-weight: bolder;
+    }
+    #bottom-1-data{
+        color: #003CB0;
+        font-weight: bolder;
+    }
+    #bank_name{
+        /* padding:0px; */
+        margin: 0px;
+        text-align: start;
+    }
+</style>
+<body>
+    
+
+    <section class="main-section">
+        <div class="main-div">
+            <div class="top-box">
+                <div class="top-logo"><img src="" width="150px" alt="SpacePe"></div>
+
+                <div class="top-details">
+                    <div class="top-details-1">SpacePe Services India LLP</div>
+                    <div class="top-details-2">
+                        <div class="top-details-2-sub-part">WZ - 206, Street No.15, Sadh Nagar, Palam Colony, New Delhi -110045</div>
+                        <div class="top-details-2-sub-part">GSTIN: 9826738S7GI</div>
+                        <div class="top-details-2-sub-part">Support No. : +91 9311663050</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="main-box">
+                <div class="top-header">PAYSLIP FOR THE MONTH OF <span id="Heading-month" class="Heading-feild"> Nov 2024</span></div>
+
+
+                <div class="details-cards">
+                    <div class="detail-card">
+                        <div class="data-feild"><span class="data-span">Name</span> <span id="name" class="data-span dynamic-data">{{ employee.name }}</span></div>
+                        <div class="data-feild"><span class="data-span">PF Number</span> <span id="name" class="data-span dynamic-data">{% if employee.pf_number is not None %}{{ employee.pf_number }}{% endif %}</span></div>
+                        <div class="data-feild"><span class="data-span">Account Number</span> <span id="name" class="data-span dynamic-data">{{ employee.account_number }}</span></div>
+                        <div class="data-feild"><span class="data-span">Department </span> <span id="name" class="data-span dynamic-data">{{ employee.department.dept_name }}</span></div>
+                        <div class="data-feild"><span class="data-span">Days LWP </span> <span id="name" class="data-span dynamic-data">0.00</span></div>
+
+                        <div class="new-section-heading">Salary Rates (Rs)</div>
+                        
+                        <div class="data-feild-2"><span class="data-span-2">Basic Salary</span> <span id="name" class="data-span-2 dynamic-data-2">{{ employee.basic_salary }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">HRA</span> <span id="name" class="data-span-2 dynamic-data-2">{{ employee.hra }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Conveyance</span> <span id="name" class="data-span-2 dynamic-data-2">{{ employee.conv }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Special Allowance</span> <span id="name" class="data-span-2 dynamic-data-2">{{ employee.special_allowance }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Medical Allowance</span> <span id="name" class="data-span-2 dynamic-data-2">0.00</span></div>
+
+                        <div class="data-feild"><span class="data-span">Total</span> <span id="name" class="data-span dynamic-data">{{ heads }}</span></div>
+                    </div>
+
+
+
+
+                    <div class="detail-card">
+                        <div class="data-feild"><span class="data-span">Employee ID</span> <span id="name" class="data-span dynamic-data">{{ employee.company_code}}_{{ employee.employee_id }}</span></div>
+                        <div class="data-feild"><span class="data-span">UAN No.</span> <span id="name" class="data-span dynamic-data">{% if employee.uan_no is not None %}{{ employee.uan_no }} {% endif %}</span></div>
+                        <div class="data-feild"><span class="data-span">IFSC</span> <span id="name" class="data-span dynamic-data">{{ employee.ifsc }}</span></div>
+                        <div class="data-feild"><span class="data-span">Designation</span> <span id="name" class="data-span dynamic-data">{{ employee.designation }}</span></div>
+                        <div class="data-feild"><span class="data-span">Arrear Days </span> <span id="name" class="data-span dynamic-data">0.00</span></div>
+
+                        <div class="new-section-heading">Earning Current Month (Rs)</div>
+
+                        <div class="data-feild-2"><span class="data-span-2">Basic Salary</span> <span id="name" class="data-span-2 dynamic-data-2">{{ payslip.basic_salary }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">HRA</span> <span id="name" class="data-span-2 dynamic-data-2">{{ payslip.hra }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Conveyance</span> <span id="name" class="data-span-2 dynamic-data-2">{{ payslip.conv }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Special Allowance</span> <span id="name" class="data-span-2 dynamic-data-2">{{ payslip.special_allowance }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2">Medical Allowance</span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+
+                        <div class="data-feild"><span class="data-span">Total</span> <span id="name" class="data-span dynamic-data">{{salary}}</span></div>
+                    </div>
+
+
+
+                    <div class="detail-card">
+                        <div class="data-feild"><span class="data-span">Joining Date</span> <span id="name" class="data-span dynamic-data">{{ employee.joining_date }}</span></div>
+                        <div class="data-feild"><span class="data-span">Bank Name </span> <span id="bank_name" class="data-span dynamic-data">{{ employee.bank_name }}</span></div>
+                        <div class="data-feild"><span class="data-span">PAN No.</span> <span id="name" class="data-span dynamic-data">{{ employee.pan_no }}</span></div>
+                        <div class="data-feild"><span class="data-span">Days Paid</span> <span id="name" class="data-span dynamic-data">0.00</span></div>
+                        <div class="data-feild"><span class="data-span">Location</span> <span id="name" class="data-span dynamic-data">Delhi NCR</span></div>
+
+                        <div class="new-section-heading">Decuction (Rs)</div>
+
+                        <div class="data-feild-2"><span class="data-span-2">PF</span> <span id="name" class="data-span-2 dynamic-data-2">{{ payslip.pf }}</span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+                        <div class="data-feild-2"><span class="data-span-2"></span> <span id="name" class="data-span-2 dynamic-data-2"></span></div>
+
+                        <!-- <div class="data-feild"><span class="data-span">Name</span> <span id="name" class="data-span dynamic-data">Shuiab Raza</span></div> -->
+                    </div>
+                </div>
+                <div class="bottom-1">Net Pay: <span id="bottom-1-data">{{ net_sal }} <span id="bottom-1-word-data">( {{net_salary_words }})</span></span></div>
+                <div class="bottom-2">***Note : Since this is a computer generated payslip, hence no signature is required</div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+</html>
